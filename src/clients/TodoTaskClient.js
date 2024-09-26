@@ -25,6 +25,9 @@ export const getTodoListFetch = async (url) => {
       },
       method: "GET",
     });
+    if(!response.ok){
+        throw new Error(`HTTP error! Status: ${response.status}`);
+    }
     const data = await response.json();
     return data;
   } catch (error) {
@@ -43,6 +46,9 @@ export const postTodoListFetch = async (url, data) => {
       method: "POST",
       body: JSON.stringify(data),
     });
+    if(!response.ok){
+        throw new Error(`HTTP error! Status: ${response.status}`);
+    }
     const responseData = await response.text();
     return responseData;
   } catch (error) {
