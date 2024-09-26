@@ -1,13 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
-import TodoList from "./components/TodoList";
-import NewTodoList from "./components/NewTodoList";
+import TodoListComponent from "./components/TodoList.component";
+import NewTodoListComponent from "./components/NewTodoList.component";
 
 function App() {
   return (
     <div className="bg-primary text-accent">
      It's live
-        <TodoList></TodoList>
+        <TodoListComponent></TodoListComponent>
     </div>
   );
 }
