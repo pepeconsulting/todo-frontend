@@ -29,7 +29,7 @@ const TodoListComponent = () => {
             <NewTodoListComponent resetTodoList={resetTodoList}></NewTodoListComponent>
             <p>Map</p>
             {todoList && todoList.map((object, index) =>
-                <TodoComponent key={index} todolist={object}/>
+                <TodoComponent key={index} todolist={object} resetTodoList={resetTodoList}/>
             )}
         </div>
     )

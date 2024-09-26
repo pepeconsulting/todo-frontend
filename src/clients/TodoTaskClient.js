@@ -31,3 +31,19 @@ export const postTodoListFetch = async (url, data) => {
     throw error;
   }
 };
+
+export const deleteTodoList = (url) => {
+    return fetch(url,
+        {
+            method: "DELETE"
+        })
+        .then(response => response.text())
+        .then(data => {
+            console.log('Success: ', data)
+            return data
+        })
+        .catch((error) => {
+            console.error('Error: ', error)
+            throw Error(error)
+        })
+}
