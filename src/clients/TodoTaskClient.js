@@ -1,13 +1,13 @@
 
-export const getTodoListFetch = (url) => {
-    fetch(url,
+export const getTodoListFetch = async (url) => {
+    return fetch(url,
         {
             headers: {
                 'Accept': 'application/json',
             },
             method: "GET",
         })
-        .then(response => response.text())
+        .then(response => response.json())
         .then(data => {
             console.log('Success:', data);
             return data
@@ -19,7 +19,7 @@ export const getTodoListFetch = (url) => {
 }
 
 export const postTodoListFetch = (url, data) => {
-    fetch(url,
+    return fetch(url,
         {
             headers: {
                 'Accept': 'application/json',
