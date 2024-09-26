@@ -1,9 +1,12 @@
 import React, {useEffect, useState} from "react";
 import {getTodoListFetch, postTodoListFetch} from "../clients/TodoTaskClient";
-import NewTodoList from "./NewTodoList";
+import NewTodoListComponent from "./NewTodoList.component";
+import TodoComponent from "./Todo.component";
 
 
-const TodoList = () => {
+
+
+const TodoListComponent = () => {
     const [todoList, setTodoList] = useState([])
 
     const resetTodoList = () => {
@@ -23,13 +26,13 @@ const TodoList = () => {
 
     return (
         <div className={"todo-list"}>
-            <NewTodoList resetTodoList={resetTodoList}></NewTodoList>
+            <NewTodoListComponent resetTodoList={resetTodoList}></NewTodoListComponent>
             <p>Map</p>
             {todoList && todoList.map((object, index) =>
-                <li key={index}>{object.name}</li>)
-            }
+                <TodoComponent key={index} todolist={object}/>
+            )}
         </div>
     )
 }
 
-export default TodoList
+export default TodoListComponent

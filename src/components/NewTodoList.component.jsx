@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import {postTodoListFetch} from "../clients/TodoTaskClient";
 
 
-const NewTodoList = ({resetTodoList}) => {
+const NewTodoListComponent = ({resetTodoList}) => {
     const [taskName, setTaskName] = useState("");
 
     const addNewTodoList = (e) => {
@@ -32,4 +32,4 @@ const NewTodoList = ({resetTodoList}) => {
 
 }
 
-export default NewTodoList
+export default NewTodoListComponent
