@@ -1,6 +1,9 @@
-export const getTodoListFetch = async (url) => {
+
+const  baseUrl = process.env.REACT_APP_BACKEND_URL;
+
+export const getTodoListFetch = async () => {
   try {
-    const response = await fetch(url, {
+    const response = await fetch(`${baseUrl}/lists`, {
       headers: {
         Accept: "application/json",
       },
@@ -17,9 +20,9 @@ export const getTodoListFetch = async (url) => {
   }
 };
 
-export const postTodoListFetch = async (url, data) => {
+export const postTodoListFetch = async ( data) => {
   try {
-    const response = await fetch(url, {
+    const response = await fetch(`${baseUrl}/lists`, {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
@@ -38,8 +41,8 @@ export const postTodoListFetch = async (url, data) => {
   }
 };
 
-export const deleteTodoList = (url) => {
-    return fetch(url,
+export const deleteTodoList = (id) => {
+    return fetch(`${baseUrl}/lists/${id}`,
         {
             method: "DELETE"
         })
