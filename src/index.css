@@ -1,3 +1,74 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    background-color: #212121;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+}
+.secondary-btn{
+    background-color: #515151;
+    color: white;
+    padding: 4px 12px;
+    font-weight: 300;
+    border-radius: 2px;
+    border: none;
+    font-size: 12px
+  
+}
+.active{
+    background-color: #00EA84;
+}
+
+@layer base {
+    body {
+        @apply  text-lg leading-8 text-white;
+    }
+
+    .h2 {
+        @apply  text-[30px] mb-6 tracking-[10%] uppercase;
+    }
+
+    .h3 {
+        @apply font-primary font-semibold text-[24px] mb-6 leading-[46px];
+    }
+
+    .btn {
+        @apply rounded-sm  text-white font-medium;
+    }
+
+    .btn-xs {
+        @apply h-[30px] px-4 text-sm;
+    }
+
+    .btn-sm {
+        @apply h-[38px] px-6 text-sm;
+    }
+
+    .btn-lg {
+        @apply h-[46px] px-10 text-base;
+    }
+
+    .btn-link {
+        @apply text-base;
+    }
+
+    .text-gradient {
+        @apply bg-gradient-to-r text-transparent bg-clip-text from-[#f5aa27] to-[#d8c863] font-primary hover: from-[#ca6702] hover:to-[#ffb703];
+    }
+
+    .section {
+        @apply py-8   flex items-center mb-28;
+    }
+}
+
