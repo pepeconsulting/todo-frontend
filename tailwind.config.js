@@ -1,7 +1,8 @@
 module.exports = {
-  content: ["./src/**/*.{html,js}"],
-  theme: {
+  content: ["./src/**/*.{html,js,jsx}"],
+    theme: {
     fontFamily: {
+      primary: ["Poppins", "sans-serif"]
     
     },
     container: {
@@ -18,8 +19,9 @@ module.exports = {
     },
     extend: {
       colors: {
-        primary: '#0a0a0a',
-        accent: '#EDA51A',
+        primary: '#3C3C3C',
+        secondary: '#464646',
+        accent: '#00EA84',
       },
       fontSize: {
         sm: '13px',

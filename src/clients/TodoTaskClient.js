@@ -1,5 +1,4 @@
-
-const  baseUrl = process.env.REACT_APP_BACKEND_URL;
+const baseUrl = process.env.REACT_APP_BACKEND_URL;
 
 export const getTodoListFetch = async () => {
   try {
@@ -9,8 +8,8 @@ export const getTodoListFetch = async () => {
       },
       method: "GET",
     });
-    if(!response.ok){
-        throw new Error(`HTTP error! Status: ${response.status}`);
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
     }
     const data = await response.json();
     return data;
@@ -20,7 +19,7 @@ export const getTodoListFetch = async () => {
   }
 };
 
-export const postTodoListFetch = async ( data) => {
+export const postTodoListFetch = async (data) => {
   try {
     const response = await fetch(`${baseUrl}/lists`, {
       headers: {
@@ -30,10 +29,10 @@ export const postTodoListFetch = async ( data) => {
       method: "POST",
       body: JSON.stringify(data),
     });
-    if(!response.ok){
-        throw new Error(`HTTP error! Status: ${response.status}`);
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
     }
-    const responseData = await response.text();
+    const responseData = await response.json();
     return responseData;
   } catch (error) {
     console.error("Error:", error);
@@ -56,3 +55,4 @@ export const deleteTodoList = (id) => {
             throw Error(error)
         })
 }
+
